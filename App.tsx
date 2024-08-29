@@ -13,10 +13,7 @@ import { Loading } from "./src/components/Loading";
 
 import { CartContextProvider } from "./src/contexts/CartContext";
 import { OneSignal } from "react-native-onesignal";
-import {
-  tagUserEmailCreate,
-  tagUserEmailRemove,
-} from "./src/notifications/notificationsTags";
+import { tagUserInfoCreate } from "./src/notifications/notificationsTags";
 
 OneSignal.initialize("285c0979-6c8e-458e-b4ad-e7185febe51e");
 OneSignal.Notifications.requestPermission(true);
@@ -24,7 +21,7 @@ OneSignal.Notifications.requestPermission(true);
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
 
-  tagUserEmailRemove("giakomogcs@gmail.com");
+  tagUserInfoCreate();
 
   return (
     <NativeBaseProvider theme={THEME}>

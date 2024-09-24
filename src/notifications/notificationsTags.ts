@@ -6,3 +6,7 @@ export function tagUserInfoCreate() {
     user_email: "giakomogcs@gmail.com",
   });
 }
+
+export function tagCarUpdate(itensCount: string) {
+  OneSignal.User.addTag("cart_itens_count", itensCount);
+}
